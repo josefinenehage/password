@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeenThis Foundation Year</title>
+</head>
+
+<body>
+    <div class="hat">🤔</div>
+    <div class="floating-text">
+        <span class="word mirrored">Vilket</span>
+        <span class="word grow-shrink">år</span>
+        <span class="word">grundades</span>
+        <span class="word seenthis">SeenThis?</span>
+    </div>
+</body>
+
+</html>
+
+<style>
+    body {
+        margin: auto;
+        height: 100vh;
+        background-color: #F50;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 20px;
+        overflow: hidden;
+    }
+
+    .floating-text {
+        display: flex;
+        gap: 10px;
+        position: relative;
+    }
+
+    .word {
+        animation: floatAround 4s ease-in-out forwards;
+        opacity: 1;
+    }
+
+    @keyframes floatAround {
+        0% {
+            transform: translate(0, 0);
+            opacity: 1;
+        }
+
+        25% {
+            transform: translate(-20px, -30px);
+        }
+
+        50% {
+            transform: translate(30px, 20px);
+        }
+
+        75% {
+            transform: translate(-10px, 30px);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    .spin {
+        animation: spinAround 8s linear forwards;
+    }
+
+    @keyframes spinAround {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(1080deg);
+        }
+    }
+
+    .mirrored {
+        animation: mirrorEffect 4s ease-in-out forwards;
+    }
+
+    @keyframes mirrorEffect {
+        0% {
+            transform: scaleX(1);
+        }
+
+        50% {
+            transform: scaleX(-1);
+        }
+
+        100% {
+            transform: scaleX(1);
+        }
+    }
+
+    .grow-shrink {
+        animation: growShrink 4s ease-in-out forwards;
+    }
+
+    @keyframes growShrink {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(5.9);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .word:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .word:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .word:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    .word:nth-child(4) {
+        animation-delay: 0.6s;
+    }
+
+    .word.seenthis {
+        animation: spinAround 4s linear forwards;
+    }
+
+    .hat {
+        font-size: 100px;
+        position: absolute;
+        top: -40%;
+        left: 40%;
+        animation: dropHat 6s ease forwards;
+    }
+
+    @keyframes dropHat {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(65vh);
+        }
+    }
+</style>
